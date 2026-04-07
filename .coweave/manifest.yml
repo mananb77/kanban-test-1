@@ -1,0 +1,44 @@
+# .coweave/manifest.yml
+# Quick Poll App - QA Infrastructure & Test Configuration
+#
+# Used by: qa-infrastructure-setup-manifest-driven workflow
+# Format: apiVersion coweave.ai/v1 ApplicationManifest
+
+apiVersion: coweave.ai/v1
+kind: ApplicationManifest
+
+metadata:
+  name: quick-poll
+  version: "1.0.0"
+  description: "Quick Poll App - Full-stack polling application"
+
+stack:
+  language: javascript
+  runtime: node
+  version: "20"
+
+infrastructure:
+  databases: []
+  caches: []
+
+workspace:
+  pvc_name: git-workspaces-pvc
+  mount_path: /persistent/git-workspaces
+
+testing:
+  project_path: server
+  framework: jest
+  install_command: "npm ci"
+  test_command: "DB_PATH=:memory: npm test -- --forceExit --detectOpenHandles"
+  types:
+    - unit
+    - integration
+  env:
+    NODE_ENV: test
+    DB_PATH: ":memory:"
+  resources:
+    memory: "512Mi"
+    cpu: "500m"
+  timeout: 300
+
+health_checks: []
