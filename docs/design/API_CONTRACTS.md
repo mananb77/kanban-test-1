@@ -43,7 +43,7 @@ Creates a new poll with a question and 2–6 answer options.
         { "id": 2, "label": "Mushrooms", "votes": 0 },
         { "id": 3, "label": "Pineapple", "votes": 0 }
     ],
-    "created_at": "2026-04-07T20:00:00.000Z"
+    "created_at": "2026-04-07T20:00:00Z"
 }
 ```
 
@@ -82,7 +82,7 @@ Fetches a poll by its UUID, including all options and current vote counts.
         { "id": 2, "label": "Mushrooms", "votes": 3 },
         { "id": 3, "label": "Pineapple", "votes": 1 }
     ],
-    "created_at": "2026-04-07T20:00:00.000Z"
+    "created_at": "2026-04-07T20:00:00Z"
 }
 ```
 
@@ -131,7 +131,7 @@ Returns the updated poll with incremented vote counts (same shape as GET):
         { "id": 2, "label": "Mushrooms", "votes": 3 },
         { "id": 3, "label": "Pineapple", "votes": 1 }
     ],
-    "created_at": "2026-04-07T20:00:00.000Z"
+    "created_at": "2026-04-07T20:00:00Z"
 }
 ```
 

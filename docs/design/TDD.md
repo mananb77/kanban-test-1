@@ -1,9 +1,9 @@
 # Technical Design Document — Quick Poll App
 
 **Issue**: #1 — Build App
-**Version**: Iteration 4
+**Version**: Iteration 5
 **Date**: 2026-04-07
-**Status**: Implementation-Ready
+**Status**: Implementation-Ready (Confirmed)
 
 ---
 
@@ -28,6 +28,14 @@ This document describes the complete technical architecture for a **full-stack Q
 - Enumerated exact package dependencies for `client/` and `server/`
 - Specified frontend loading states, error UI, and 404 handling
 - Declared design **implementation-ready** with recommendation to transition to development phase
+
+**Iteration 5 Changes (Final Cross-Reference Validation):**
+- Fixed `DEPLOYMENT_STRATEGY.md` root `package.json` to use `postinstall` hook (was incorrectly using `install:all` script name, which would not auto-run on `npm install`)
+- Fixed `DEPLOYMENT_STRATEGY.md` error handler to log `err.stack` consistently with TDD specification (was logging `err.message`)
+- Fixed `API_CONTRACTS.md` `created_at` format in all example responses to `"...T...Z"` without milliseconds (was showing `.000Z` which doesn't match `datetime('now')` output)
+- Fixed `SECURITY_DESIGN.md` validation middleware to use separate error messages for array/length checks (aligned with TDD section 7.3 authoritative implementation)
+- Fixed `SECURITY_DESIGN.md` UUID validation claim on GET `/api/polls/:id` — corrected to document actual behavior (DB lookup returns 404, no format validation)
+- Confirmed design is **implementation-ready** — all 6 documents are now fully consistent
 
 ---
 
@@ -906,7 +914,8 @@ export async function castVote(id, optionIndex) {
 ## 16. Approval Status
 
 - [x] Architecture Review (Iteration 3 — score 95/100)
-- [x] Architecture Refinement (Iteration 4 — gaps closed)
+- [x] Architecture Refinement (Iteration 4 — score 98/100, gaps closed)
+- [x] Cross-Reference Validation (Iteration 5 — supporting docs aligned with TDD)
 - [ ] Security Review
 - [ ] Performance Review
 - [ ] Stakeholder Approval

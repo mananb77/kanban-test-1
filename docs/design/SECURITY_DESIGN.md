@@ -33,9 +33,11 @@ All input validation happens server-side — never trust client input.
 | POST /api/polls | `options` | Required, array, 2–6 items |
 | POST /api/polls | `options[n]` | Required, string, trimmed, 1–200 chars |
 | POST /api/polls/:id/vote | `optionIndex` | Required, integer, 0 ≤ n < options.length |
-| GET /api/polls/:id | `id` | UUID v4 format validation |
+| GET /api/polls/:id | `id` | Looked up in DB; returns 404 if not found (no format validation needed — non-matching IDs simply return no results) |
 
 ### 2.2 Validation Middleware
+
+See TDD.md section 7.3 for the authoritative `validateCreatePoll` and `validateVote` implementations. Key security points:
 
 ```javascript
 function validateCreatePoll(req, res, next) {
@@ -47,8 +49,14 @@ function validateCreatePoll(req, res, next) {
     if (question.trim().length > 500) {
         return res.status(400).json({ error: 'Question must be 500 characters or fewer' });
     }
-    if (!Array.isArray(options) || options.length < 2 || options.length > 6) {
-        return res.status(400).json({ error: 'Between 2 and 6 options are required' });
+    if (!Array.isArray(options)) {
+        return res.status(400).json({ error: 'Options must be an array' });
+    }
+    if (options.length < 2) {
+        return res.status(400).json({ error: 'At least 2 options are required' });
+    }
+    if (options.length > 6) {
+        return res.status(400).json({ error: 'No more than 6 options are allowed' });
     }
     for (const opt of options) {
         if (!opt || typeof opt !== 'string' || opt.trim().length === 0) {

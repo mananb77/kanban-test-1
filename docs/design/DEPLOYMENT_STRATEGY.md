@@ -27,11 +27,15 @@
 
 ```json
 {
+    "name": "quick-poll-app",
+    "version": "1.0.0",
+    "private": true,
+    "description": "A full-stack quick poll application",
     "scripts": {
-        "install:all": "cd client && npm install && cd ../server && npm install",
+        "postinstall": "cd client && npm install && cd ../server && npm install",
         "build": "cd client && npm run build",
         "start": "cd server && node index.js",
-        "dev": "concurrently \"cd server && node index.js\" \"cd client && npm run dev\""
+        "dev": "cd server && node index.js"
     }
 }
 ```
@@ -43,9 +47,9 @@ npm install && npm run build && npm start
 ```
 
 This single command chain:
-1. Installs root dependencies (if any)
-2. `npm run build` → Runs Vite build in `client/`, outputs to `client/dist/`
-3. `npm start` → Starts Express, serves API + static files on port 3000
+1. `npm install` — Installs root-level deps (none), then npm automatically runs `postinstall` which installs `client/` and `server/` dependencies
+2. `npm run build` — Runs Vite production build in `client/`, outputs to `client/dist/`
+3. `npm start` — Starts Express in `server/`, which serves both the API and the built frontend on port 3000
 
 ## 3. Environment Configuration
 
@@ -124,7 +128,7 @@ app.use((req, res, next) => {
 
 // Error logging
 app.use((err, req, res, next) => {
-    console.error(`${new Date().toISOString()} ERROR:`, err.message);
+    console.error(`${new Date().toISOString()} ERROR:`, err.stack);
     res.status(500).json({ error: 'Internal server error' });
 });
 ```
