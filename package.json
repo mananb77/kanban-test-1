@@ -1,0 +1,12 @@
+{
+    "name": "quick-poll-app",
+    "version": "1.0.0",
+    "private": true,
+    "description": "A full-stack quick poll application",
+    "scripts": {
+        "postinstall": "cd client && npm install && cd ../server && npm install",
+        "build": "sh scripts/build.sh",
+        "start": "cd server && node index.js",
+        "dev": "cd server && node index.js"
+    }
+}
