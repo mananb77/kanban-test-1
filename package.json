@@ -8,6 +8,8 @@
         "build": "sh scripts/build.sh",
         "start": "cd server && node index.js",
         "dev": "cd server && node index.js",
-        "test": "cd server && npm test"
+        "test": "cd server && npm test",
+        "test:qa": "DB_PATH=:memory: npx --prefix server jest --forceExit --detectOpenHandles --config tests/jest.config.js",
+        "test:all": "npm test && npm run test:qa"
     }
 }
