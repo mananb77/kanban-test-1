@@ -2,15 +2,15 @@
   "iteration": 3,
   "phase": "qa-dev",
   "status": "completed",
-  "timestamp": "2026-04-08T23:50:00Z",
+  "timestamp": "2026-04-09T00:05:00Z",
   "issue": {
     "number": 1,
     "title": "Build App",
     "repository": "mananb77/kanban-test-1"
   },
   "test_results": {
-    "total_tests": 294,
-    "passing": 294,
+    "total_tests": 342,
+    "passing": 342,
     "failing": 0,
     "skipped": 0,
     "test_suites": 6,
@@ -22,10 +22,12 @@
     "dev_tests": 101,
     "qa_iteration_1_tests": 75,
     "qa_iteration_2_tests": 57,
-    "qa_iteration_3_tests": 61
+    "qa_iteration_3_tests": 109
   },
-  "iteration_3_new_tests": {
-    "total": 61,
+  "iteration_3_tests": {
+    "total": 109,
+    "original_tests": 61,
+    "new_tests_added": 48,
     "categories": [
       {
         "name": "X-Powered-By Header Disclosure",
@@ -52,7 +54,7 @@
         "type": "coverage_gap"
       },
       {
-        "name": "File-Based SQLite Persistence",
+        "name": "File-Based SQLite Persistence (Code Inspection)",
         "count": 8,
         "priority": 3,
         "type": "coverage_gap"
@@ -64,7 +66,7 @@
         "type": "coverage_gap"
       },
       {
-        "name": "Multiple Sequential Votes — No Vote-Once Enforcement",
+        "name": "Multiple Sequential Votes",
         "count": 5,
         "priority": 3,
         "type": "coverage_gap"
@@ -92,6 +94,69 @@
         "count": 6,
         "priority": 4,
         "type": "code_quality"
+      },
+      {
+        "name": "Graceful Shutdown — Actual Signal Handling",
+        "count": 2,
+        "priority": 3,
+        "type": "coverage_gap",
+        "new_in_enhancement": true
+      },
+      {
+        "name": "File-Based SQLite — Actual Persistence",
+        "count": 3,
+        "priority": 3,
+        "type": "coverage_gap",
+        "new_in_enhancement": true
+      },
+      {
+        "name": "Input Whitespace Trimming Verification",
+        "count": 5,
+        "priority": 4,
+        "type": "code_quality",
+        "new_in_enhancement": true
+      },
+      {
+        "name": "Negative and Boundary OptionIndex Validation",
+        "count": 10,
+        "priority": 3,
+        "type": "coverage_gap",
+        "new_in_enhancement": true
+      },
+      {
+        "name": "HTTP Method Enforcement",
+        "count": 7,
+        "priority": 3,
+        "type": "coverage_gap",
+        "new_in_enhancement": true
+      },
+      {
+        "name": "Response Type Strictness",
+        "count": 10,
+        "priority": 4,
+        "type": "code_quality",
+        "new_in_enhancement": true
+      },
+      {
+        "name": "Concurrent Create-and-Vote Stress",
+        "count": 3,
+        "priority": 3,
+        "type": "coverage_gap",
+        "new_in_enhancement": true
+      },
+      {
+        "name": "Accept Header Handling",
+        "count": 4,
+        "priority": 3,
+        "type": "coverage_gap",
+        "new_in_enhancement": true
+      },
+      {
+        "name": "Production Security Header Audit",
+        "count": 4,
+        "priority": 2,
+        "type": "production_hardening",
+        "new_in_enhancement": true
       }
     ]
   },
@@ -101,39 +166,33 @@
   "observations": [
     {
       "id": "OBS-001",
+      "severity": "low-medium",
+      "description": "Security headers (X-Content-Type-Options, X-Frame-Options) missing on JSON parse error 500 responses due to middleware ordering",
+      "recommendation": "Move security header middleware before express.json() in app.js, or set headers in global error handler",
+      "new_in_iteration": true
+    },
+    {
+      "id": "OBS-002",
       "severity": "low",
       "description": "X-Powered-By: Express header not disabled",
       "recommendation": "Add app.disable('x-powered-by')"
     },
     {
-      "id": "OBS-002",
-      "severity": "low",
-      "description": "No Content-Security-Policy header set",
-      "recommendation": "Add CSP header via helmet or manual middleware"
-    },
-    {
       "id": "OBS-003",
       "severity": "low",
-      "description": "No Strict-Transport-Security header",
-      "recommendation": "Add HSTS when running behind HTTPS"
+      "description": "Missing production security headers (CSP, HSTS, Referrer-Policy, Permissions-Policy)",
+      "recommendation": "Add helmet middleware or manual header configuration"
     },
     {
       "id": "OBS-004",
       "severity": "low",
-      "description": "No Referrer-Policy header",
-      "recommendation": "Add Referrer-Policy: strict-origin-when-cross-origin"
-    },
-    {
-      "id": "OBS-005",
-      "severity": "medium",
       "description": "Invalid JSON returns 500 instead of 400",
       "recommendation": "Add SyntaxError check in error handler, return 400"
     }
   ],
-  "files_created": [
+  "files_modified": [
     "tests/qa-iteration3.test.js"
   ],
-  "files_modified": [],
   "regressions": 0,
   "acceptance_criteria_met": true
 }
