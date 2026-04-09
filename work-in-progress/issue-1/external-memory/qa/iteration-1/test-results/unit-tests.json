@@ -1,0 +1,17 @@
+{
+  "test_type": "unit",
+  "exit_code": 0,
+  "success": true,
+  "summary": {
+    "total": 101,
+    "passed": 101,
+    "failed": 0
+  },
+  "failures": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0
+  },
+  "raw_output_file": "/persistent/git-workspaces/mananb77/kanban-test-1/issue-1/repos/mananb77/kanban-test-1/work-in-progress/issue-1/external-memory/qa/iteration-1/test-results/unit-tests.txt",
+  "timestamp": "2026-04-09T00:09:34+00:00"
+}

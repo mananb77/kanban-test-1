@@ -1,0 +1,384 @@
+
+> quick-poll-app@1.0.0 test
+> cd server && npm test
+
+
+> quick-poll-server@1.0.0 test
+> DB_PATH=:memory: jest --forceExit --detectOpenHandles
+
+PASS __tests__/api.test.js
+  ● Console
+
+    console.log
+      2026-04-09T00:09:37.710Z GET /api/health
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:37.767Z GET /api/health
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:37.794Z GET /api/health
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:37.835Z GET /api/health
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:37.870Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:37.915Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:37.943Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:37.971Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:37.996Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.016Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.053Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.109Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.131Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.152Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.176Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.200Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.221Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.244Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.267Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.290Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.319Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.343Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.363Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.382Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.396Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.420Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.446Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.465Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.486Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.502Z GET /api/polls/5d054652-1936-4b5c-8062-9d0c7a17685f
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.518Z GET /api/polls/5d054652-1936-4b5c-8062-9d0c7a17685f
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.538Z GET /api/polls/5d054652-1936-4b5c-8062-9d0c7a17685f
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.555Z GET /api/polls/nonexistent-id
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.570Z GET /api/polls/00000000-0000-0000-0000-000000000000
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.592Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.615Z POST /api/polls/78ad373a-b1d1-4ff9-a6fa-9c1b414b3446/vote
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.643Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.664Z POST /api/polls/223abc57-a44b-4f58-81cc-3d49de3a28c4/vote
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.687Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.708Z POST /api/polls/1322e6dc-7db2-42b2-937d-35545dd98d95/vote
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.733Z POST /api/polls/1322e6dc-7db2-42b2-937d-35545dd98d95/vote
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.755Z POST /api/polls/1322e6dc-7db2-42b2-937d-35545dd98d95/vote
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.774Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.791Z POST /api/polls/cb929838-f5e5-4ee3-8654-2552badc9c43/vote
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.807Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.826Z POST /api/polls/22f36e06-00bf-4c18-bbd3-8da0a403c627/vote
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.842Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.858Z POST /api/polls/nonexistent-id/vote
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.875Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.891Z POST /api/polls/04f8d6a4-47d8-4d41-9343-e289ba4029df/vote
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.908Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.925Z POST /api/polls/cabe256a-caa8-4399-8e87-e4aebf67c0e0/vote
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.943Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.956Z POST /api/polls/7c857450-7905-404d-b77f-7a725d381b94/vote
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.971Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:38.988Z POST /api/polls/53516d5c-d5cc-4dd3-8bb4-8ca2b18f0ebd/vote
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:39.002Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:39.015Z POST /api/polls/9f4d6a25-6c67-4e7f-983a-f456ff5012e0/vote
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:39.036Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:39.049Z POST /api/polls/d6d964d1-5ede-4e7d-8c1b-0de6697c7887/vote
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:39.070Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:39.093Z POST /api/polls/ce87a36e-abe6-4d52-84a3-33a9f0ed3f1e/vote
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:39.118Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:39.140Z POST /api/polls/239ab32a-4770-488b-b803-5cf96f77fd1b/vote
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:39.178Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:39.201Z POST /api/polls/f18b993e-1315-428f-8e2c-09e71b0a6e53/vote
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:39.219Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:39.236Z POST /api/polls/9eae50b6-426d-44dd-ad77-4cce8efd0ed5/vote
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:39.264Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:39.288Z GET /api/polls/fe83898a-3efd-4f2e-9d17-19a38869bb35
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:39.305Z POST /api/polls
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:39.320Z POST /api/polls/479f12cd-6d6a-4404-8c81-e8db3fe58f92/vote
+
+      at log (app.js:13:13)
+
+    console.log
+      2026-04-09T00:09:39.334Z GET /api/polls/479f12cd-6d6a-4404-8c81-e8db3fe58f92
+
+      at log (app.js:13:13)
+
+PASS __tests__/validate.test.js
+PASS __tests__/queries.test.js
+
+Test Suites: 3 passed, 3 total
+Tests:       101 passed, 101 total
+Snapshots:   0 total
+Time:        3.32 s, estimated 6 s
+Ran all test suites.
